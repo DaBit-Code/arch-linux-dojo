@@ -1,3 +1,11 @@
+Descarga Arch Linux
+
+    https://archlinux.org/download/
+
+Descarga Virtual Box
+
+    https://www.virtualbox.org/wiki/Downloads
+
 Configuracion de minima en Virtual Box:
 
     4 Gb en RAM
