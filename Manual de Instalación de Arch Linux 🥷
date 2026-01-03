@@ -1,0 +1,32 @@
+Este documento guía paso a paso la instalación de Arch Linux desde cero, incluyendo errores comunes que suelen enfrentar los principiantes. El corte llega hasta el primer arranque exitoso con GRUB.
+
+Índice:
+
+  1.- Preparación del entorno
+
+  2.- Particionado del disco
+
+  3.- Formateo y montaje
+
+  4.- Instalación del sistema base
+
+  5.- Configuración inicial
+
+  6.- Kernel e initramfs
+
+  7.- Bootloader (GRUB)
+
+  8.- Primer arranque
+
+  #Errores comunes documentados
+
+#1. Preparación del entorno
+
+    Descargar ISO de Arch Linux.
+
+    Crear VM en VirtualBox (mínimo 40 GB de disco).
+
+    Verificar conexión a internet:
+
+```bash
+    ping -c 3 archlinux.org
