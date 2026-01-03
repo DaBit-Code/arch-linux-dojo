@@ -28,6 +28,4 @@ Este documento guía paso a paso la instalación de Arch Linux desde cero, inclu
 
     Verificar conexión a internet:
 
-```bash
-    ping -c 3 archlinux.org
-```
+    ping -c 3 archlinux.org `#1589F0`
