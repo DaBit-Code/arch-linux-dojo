@@ -46,6 +46,14 @@ Instala Tmux (multiplexor):
 
     pacman -S tmux
 
+Nota:
+
+    Salir de root a dojo: exit y luego iniciar sesión como dojo.
+
+    Entrar de dojo a root: su - (contraseña de root).
+
+    Método recomendado: usar sudo desde dojo para tareas administrativas.
+
 Configuración inicial (usuario dojo)
 Copia configuraciones de ejemplo:
 
