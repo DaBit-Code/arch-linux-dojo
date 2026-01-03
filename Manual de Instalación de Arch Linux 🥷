@@ -30,3 +30,4 @@ Este documento guía paso a paso la instalación de Arch Linux desde cero, inclu
 
 ```bash
     ping -c 3 archlinux.org
+```
