@@ -1,11 +1,36 @@
-Conectividad y utilidades básicas (root)
+Antes de iniciar con la instalación de programas y paquetes verifica que tengas navegación hacia Internet
 
-Instala y habilita el gestor de red:
+    ping 8.8.8.8
 
-    pacman -S networkmanager
+Si no tienes navegación por favor haz lo siguiente
+
+    Inicia de nuevo con el LiveCD de Arch Linux
+
+Monta la raíz y activa el swap
+
+    mount /dev/sda2 /mnt
+    swapon /dev/sda1
+
+Entrar al sistema con
+
+    arch-chroot /mnt
+
+Instala o reinstala los paquetes necesarios (no olvides habilitarlos)
+
+    pacman -S networkmanager virtualbox-guest-utils
     systemctl enable NetworkManager
-    systemctl start NetworkManager
+    systemctl enable vboxservice
 
+Salte con
+
+    exit
+
+Apaga la Maquina Virtual, desmonta el LiveCD para que inicie desde el Disco Duro haz login con root y la contraseña que elegiste (si seguiste el manual tal cual la contraseña es dojo) y prueba de nuevo si tienes salida hacia Internet con
+
+    ping 8.8.8.8
+
+Si tienes respuesta del ping continua con la instalación de programas y paquetes.
+    
 Instala utilidades esenciales:
 
     pacman -S sudo git base-devel
