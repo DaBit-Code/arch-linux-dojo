@@ -74,6 +74,7 @@ Hostname:
     echo dojo > /etc/hostname
 
 Hosts (edita con vim):
+Nota para editar con vim: preciona la tecla i (entras en modo inserción), ya modificado lo que tengas que modificar preciona Esc (regresa al modo de insertar comandos), luego pones :wq (W de Write/Escribir y Q de Quit/Salir) y das Enter
 
     vim /etc/hosts
 
