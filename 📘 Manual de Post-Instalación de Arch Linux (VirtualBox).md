@@ -99,6 +99,30 @@ Edita ~/.config/sxhkd/sxhkdrc y añade:
     super + d
         rofi -show drun
 
+Configuracion básica de la Polybar
+
+    mkdir -p ~/.config/polybar
+
+Edita ~/.config/polybar/config.ini
+
+    vim ~/.config/polybar/config.ini
+    [bar/main]
+    width = 100%
+    height = 24
+    background = #222
+    foreground = #fff
+
+    modules-left = xworkspaces
+    modules-right = date
+
+    [module/xworkspaces]
+    type = internal/xworkspaces
+
+    [module/date]
+    type = internal/date
+    interval = 5
+    date = %H:%M
+
 Fuentes y apariencia (root)
 
     pacman -S ttf-dejavu ttf-font-awesome
