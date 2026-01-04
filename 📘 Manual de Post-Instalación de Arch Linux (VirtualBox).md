@@ -52,9 +52,7 @@ Descomenta la línea:
 Instalar entorno gráfico mínimo (root)
 
     pacman -S xorg xorg-xinit
-    pacman -S virtualbox-guest-utils
-    systemctl enable vboxservice
-
+    
 Instala BSPWM y SXHKD:
 
     pacman -S bspwm sxhkd
