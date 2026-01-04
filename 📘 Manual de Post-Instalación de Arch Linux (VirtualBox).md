@@ -94,10 +94,11 @@ Edita ~/.config/bspwm/bspwmrc y añade al final:
 Edita ~/.config/sxhkd/sxhkdrc y añade:
 
     vim ~/.config/sxhkd/sxhkdrc
-    super + Return
+    alt + Return
         kitty
     super + d
         rofi -show drun
+Nota: “En algunos entornos virtualizados (VirtualBox), la tecla Super puede no transmitirse correctamente. Si los atajos no responden, prueba con Alt o Ctrl como sustituto temporal”
 
 Configuracion básica de la Polybar
 
