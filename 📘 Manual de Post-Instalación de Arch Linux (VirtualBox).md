@@ -88,6 +88,9 @@ Copia configuraciones de ejemplo:
 Edita ~/.config/bspwm/bspwmrc y añade al final:
 
     vim ~/.config/bspwm/bspwmrc
+    #Lanzar sxhkd (atajos de teclado) 
+    sxhkd & 
+    #Lanzar Polybar
     polybar main &
 
 Edita ~/.config/sxhkd/sxhkdrc y añade:
