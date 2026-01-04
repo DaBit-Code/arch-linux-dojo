@@ -57,9 +57,34 @@ Instala BSPWM y SXHKD:
 
     pacman -S bspwm sxhkd
 
-Instala Polybar y Rofi:
+Para instalar Ulauncher necesitamos hacer esto ya que no es un repositorio oficial de Arch Linux
 
-    pacman -S polybar rofi
+    sudo pacman -S git base-devel
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+
+Instalar Ulauncher desde AUR
+
+    yay -S ulauncher
+
+Una vez terminada la instalación habilita el servicio para que arranque automaticamente
+
+    systemctl --user enable --now ulauncher.service
+
+Para evitar problemas de Hoykey has lo siguiente
+
+Edita el archivo de configuración de Ulauncher:
+
+    vim ~/.config/ulauncher/settings.json
+
+Busca la clave "hotkey_show_app" y cámbiala a algo inválido o vacío:
+
+    "hotkey_show_app": ""
+
+Instala Polybar y Ulauncher:
+
+    pacman -S polybar ulauncher
 
 Instala Kitty (terminal moderna):
 
@@ -88,7 +113,9 @@ Copia configuraciones de ejemplo:
 Edita ~/.config/bspwm/bspwmrc y añade al final:
 
     vim ~/.config/bspwm/bspwmrc
-    #Lanzar Polybar
+    #Integrar Ulauncher a BSPWM (agregala debajo de pgrep -x sxhkd > /dev/null || sxhkd &)
+    pgrep -x ulauncher > /dev/null || ulauncher & 
+    #Integrar Polybar a BSPWM
     polybar main &
 
 Edita ~/.config/sxhkd/sxhkdrc y añade:
@@ -96,8 +123,8 @@ Edita ~/.config/sxhkd/sxhkdrc y añade:
     vim ~/.config/sxhkd/sxhkdrc
     alt + Return
         kitty
-    super + d
-        rofi -show drun
+    alt + d
+        ulauncher-toggle
 Nota: “En algunos entornos virtualizados (VirtualBox), la tecla Super puede no transmitirse correctamente. Si los atajos no responden, prueba con Alt o Ctrl como sustituto temporal”
 
 Configuracion básica de la Polybar
@@ -146,6 +173,16 @@ Opcional: instalar configuración optimizada Oh My Tmux:
     ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
     cp ~/.tmux/.tmux.conf.local ~/
 
+## Apéndice: Errores comunes y rescates rápidos
+
+### Pantalla negra al iniciar BSPWM
+- **Causa:** `~/.xinitrc` mal configurado o `bspwmrc` no ejecutable.
+- **Rescate:**
+  ```bash
+  echo "exec bspwm" > ~/.xinitrc
+  chmod +x ~/.config/bspwm/bspwmrc
+
+
 ✅ Resultado
 
 Al iniciar sesión como usuario dojo y ejecutar startx, tendrás:
@@ -154,9 +191,9 @@ Al iniciar sesión como usuario dojo y ejecutar startx, tendrás:
 
     Polybar mostrando escritorios y módulos.
 
-    Rofi como lanzador de aplicaciones (Super + D).
+    Ulauncher como lanzador de aplicaciones (alt + D).
 
-    Kitty como terminal (Super + Return).
+    Kitty como terminal (alt + Return).
 
     Tmux para sesiones persistentes y paneles dentro de Kitty.
 
