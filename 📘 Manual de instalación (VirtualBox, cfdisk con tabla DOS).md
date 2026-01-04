@@ -61,6 +61,13 @@ Kernel, initramfs y utilidades
     pacman -S linux linux-firmware vim
     mkinitcpio -P
 
+Instalar NetworkManager y VirtualBox Guest Additions (root)
+
+    pacman -S networkmanager virtualbox-guest-utils
+    systemctl enable NetworkManager
+    systemctl enable vboxservice
+Nota: Así, cuando reinicies desde el disco duro, la red estará lista y podrás continuar la post-instalación sin bloqueos.
+
 Identidad del sistema
 Hostname:
 
