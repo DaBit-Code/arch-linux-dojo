@@ -8,22 +8,29 @@ En tu sesión actual (TTY o Kitty):
 
 Configuración persistente en Xorg
 
-    vim /etc/X11/xorg.conf.d/00-keyboard.conf
+       sudo vim /etc/X11/xorg.conf.d/00-keyboard.conf
 
+Nota: Tienes que cambiarte a usuario root
+
+        su -
+        
 Con este contenido:
 
     Section "InputClass"
-      Identifier "system-keyboard"
-      MatchIsKeyboard "on"
-      Option "XkbLayout" "latam"
-       Option "XkbModel" "pc105"
+        Identifier "system-keyboard"
+        MatchIsKeyboard "on"
+        Option "XkbLayout" "latam"
     EndSection
+Luego regresar al usuario normal con
 
+    exit
+    
 Configuración persistente en consola (TTY)
 
 Si también quieres que el teclado esté en latam en TTY (fuera de Xorg):
 
     sudo localectl set-keymap latam
+    
 Verificación
 
 - En Kitty, prueba las teclas (ñ, acentos, símbolos).
