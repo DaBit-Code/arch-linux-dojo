@@ -8,12 +8,12 @@ En tu sesión actual (TTY o Kitty):
 
 Configuración persistente en Xorg
 
+Cambiate a usuario root:
+
+       su -
+
        sudo vim /etc/X11/xorg.conf.d/00-keyboard.conf
 
-Nota: Tienes que cambiarte a usuario root
-
-        su -
-        
 Con este contenido:
 
     Section "InputClass"
